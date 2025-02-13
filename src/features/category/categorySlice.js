@@ -10,7 +10,7 @@ const initCategoryState = {
 export const fetchAllCategories = createAsyncThunk(
   "category/fetchAllCategories",
   async ({ isAll = true, limit = 5 } = {}) => {
-    let url = "http://localhost:5000/categories";
+    let url = "https://teplodom-backend.vercel.app/CategoryCard";
 
     if (!isAll) url += `?_limit=${limit}`;
 

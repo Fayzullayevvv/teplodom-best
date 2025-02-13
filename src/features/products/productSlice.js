@@ -12,7 +12,7 @@ const initProductState = {
 export const fetchAllProducts = createAsyncThunk(
   "product/fetchAllProducts",
   async () => {
-    const response = await fetch("http://localhost:5000/products");
+    const response = await fetch("https://teplodom-backend.vercel.app/ProductCard");
     const data = await response.json();
     return data;
   }
@@ -23,7 +23,7 @@ export const toggleProductLike = createAsyncThunk(
   async ({ productId, isLiked }) => {
     try {
       const patchResponse = await fetch(
-        `http://localhost:5000/products/${productId}`,
+        `https://teplodom-backend.vercel.app/ProductCard/${productId}`,
         {
           method: "PATCH",
           headers: {
